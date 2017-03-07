@@ -1,0 +1,169 @@
+*{
+	padding:0;
+	margin:0;
+	box-sizing:border-box;/*元素高宽包括边框*/
+}
+html,body{
+	height:100%;
+}
+body {
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background:#000;
+  color:#fff;
+  text-align:center;
+}
+
+header,.left,.right{
+	position:absolute;
+}
+header{
+	left:10px;
+	top:10px;
+	right:10px;/*不指定宽度，指定左右，宽度自适应*/
+	height:150px;
+	/*border:solid #fff 1px;*/
+	z-index:2;
+}
+header h1{
+	font-size:40px;
+	height:60px;
+	line-height:60px;
+}
+
+#type{
+	width:150px;
+	height:28px;
+	margin:10px auto;
+}
+
+#type li{
+	display:inline-block;
+	width:60px;
+	height:28px;
+	font-size:16px;
+	line-height:28px;
+	text-align:center;
+	border:1px solid #fff;
+	border-radius:5px;
+	cursor:pointer;
+}
+
+#type>:first-child{
+	border-right:none;
+	border-bottom-right-radius:0;
+	border-top-right-radius:0;
+	margin-right:-4px;
+}
+
+#type>:last-child{
+	border-left:none;
+	border-bottom-left-radius:0;
+	border-top-left-radius:0;
+}
+
+
+#type .selected{
+	color:#000;
+	background:#fff;
+}
+
+input[type='range'] {
+	-webkit-appearance: none;
+	background-color: gray;
+	height: 8px;
+	border-radius: 15px;
+	outline: none;
+}
+input[type='range']::-webkit-slider-thumb{
+	    -webkit-appearance: none;
+	    height: 12px;
+	    width: 12px;
+	    background: #ddd;
+	    border-radius: 100%;
+	    border: none;
+}
+input[type='range']::-moz-range-track{
+	    height: 8px;
+	    background: gray;
+	    border-radius: 15px;
+	    border: none;
+}
+input[type='range']::-moz-range-thumb{
+	    height: 12px;
+	    width: 12px;
+	    background: #ddd;
+	    border: none;
+	    border-radius: 100%;
+}
+input.range::-webkit-slider-thumb{
+    	height: 18px;
+    	width: 18px;
+}
+input.range::-moz-range-thumb{
+	    height: 18px;
+	    width: 18px;
+}
+
+.left{
+	left:10px;
+	top:170px;
+	bottom:10px;/*不指定高度，指定距离底部位置，高度自适应*/
+	width:15%;
+	border:solid #fff 1px;
+	overflow:auto;
+	padding-top:10px;
+	z-index:2;
+}
+.left ul{
+	overflow:auto;
+}
+.left ul li{
+	list-style-type:none;
+	height:30px;
+	line-height:30px;
+	cursor:pointer;
+	overflow:hidden;
+	white-space:nowrap;
+	text-overflow:ellipsis;
+}
+.left ul .selected{
+	color:green;
+}
+
+.right{
+	top:10px;
+	right:10px;
+	bottom:10px;
+	left:10px;
+	z-index:1;
+}
+/*媒体查询*/
+@media screen and(max-width:800px),screen and (max-height:500px){
+	body{
+		font-size:12px;
+	}
+	header{
+		height:80px;
+	}
+	header h1{
+		font-size:22px;
+		height:32px;
+		line-height:32px;
+	}
+	#type{
+		width:100px;
+		height:18px;
+		margin:6px auto;
+	}
+	#type li{
+		display:inline-block;
+		width:45px;
+		height:18px;
+		font-size:12px;
+		line-height:18px;
+		border-radius:3px;
+	}
+	.left,.right{
+		top:100px;
+	}
+}

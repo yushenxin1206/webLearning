@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		#canvas{
+			display:block;/*本身不是块级标签，左右外边距无法测*/
+			border:2px solid #69c;
+			box-shadow:0 0 8px #888;
+			margin:50px auto;
+		}
+	</style>
+</head>
+<body>
+	<canvas id="canvas">当前浏览器不支持canvas，请更换浏览器</canvas>
+</body>
+<script type="text/javascript">
+	window.onload=function(){
+		var canvas=document.getElementById("canvas");
+			canvas.width="1366";
+			canvas.height="768";
+		var context=canvas.getContext("2d");
+		//绘制
+		/*context.beginPath();
+		context.moveTo(100,100);
+		context.lineTo(700,700);
+		context.lineTo(100,700);
+		context.lineTo(100,100);
+		context.closePath();
+		
+		context.lineWidth=5;
+		context.strokeStyle="#69c";
+		context.stroke();*/
+		
+		//context.fillStyle="rgb(102,153,204)";
+		//context.fill();
+		context.lineWidth=5;
+		context.strokeStyle="#69c";
+		context.arc(300,300,200,0,1.5*Math.PI);
+		context.stroke();
+		context.clearRect(0,0,1366,768);
+		
+	};
+</script>
+</html>
